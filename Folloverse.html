@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Stalinist+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <style>
+            body {
+    color:white;
+    background-color:#000022;
+    user-select:none;
+}
+
+.header {
+    font-size:20px;
+    background-color:#000022;
+    position:fixed;
+    padding:5px;
+    width:100%;
+    border-style:solid;
+    border-color:white;
+    border-width:0px 0px 1px 0px;
+    left:0;
+    top:0;
+    z-index:3;
+}
+.follo {
+    font-family:Audiowide;
+}
+.verse {
+    font-family:Stalinist One;
+    color:red;
+}
+
+.options {
+    right:10px;
+    position:fixed;
+}
+
+#menu {
+    color:white;
+    background-color:black;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    border-radius:0px 10px 10px 0px;
+    width:200px;
+    height:90vh;
+    position:fixed;
+    left:0;
+    text-align:center;
+    z-index:7;
+}
+
+#profile {
+    text-align:center;
+    display:none;
+}
+.thought {
+    position:absolute;
+    height:70px;
+    width:150px;
+    color:white;
+    background-color:black;
+    top:70px;
+    left:50%;
+    transform:translateX(10px);
+    z-index:0;
+    border:1px solid #F7DC6F;
+    border-radius:5px;
+    padding:5px;
+}
+.circle {
+    display:inline-block;
+    width:57px;
+    height:57px;
+    border:3px solid white;
+    padding:20px;
+    border-radius:100px;
+    background-color:#000022;
+    z-index:1;
+    position:relative;
+}
+
+.pfCircle {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:30px;
+    border:1px solid white;
+    padding:5px;
+    border-radius:100px;
+    background-color:#000022;
+    z-index:0;
+    position:relative;
+}
+
+.pfInfo {
+    display:flex;
+}
+.bottomNav {
+    position:fixed;
+    width:100%;
+    height:40px;
+    background-color:#00001A;
+    bottom:0;
+    left:0;
+    border-style:solid;
+    border-color:#F7DC6F;
+    border-width:1px 0px 0px 0px;
+    color:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    z-index:3;
+}
+
+.followbtn {
+    background-color:#00CC00;
+    font-weight:bold;
+    color:white;
+}
+
+.text {
+    background-color:#222244;
+    padding:10px;
+}
+
+#homepage {
+    display:block;
+}
+
+#searchPage {
+    display:none;
+    text-align:center;
+}
+#searchbar {
+    text-indent:28px;
+    position:fixed;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    background-color:#000022;
+    width:95%;
+    height:25px;
+    color:#F8B300;
+    border:2px solid #F2C464;
+    padding:5px 5px 5px 5px;
+    border-radius:20px;
+    font-size:18px;
+    z-index:5;
+}
+#searchPage label {
+    position:fixed;
+    top:55px;
+    left:15px;
+    z-index:6;    
+}
+
+img {
+    width:100%;    
+}
+
+a {
+    color:#5588FF;
+}
+        </style>
+    </head>
+    <body>
+        <div class='header'><span class='follo'><b>FOLLO</b></span><span class='verse'>VERSE</span><span class='options'><i class='fas fa-plus'></i> <i class='fas fa-bars' onclick='toggleMenu()' id='menu-icon'></i></span></div><br><br><br>
+        <div id='menu'>
+            <h2>Settings</h2>
+            <h2>Accounts</h2>
+            <h2>Subscriptions</h2>
+            <h2>Feedback</h2>
+        </div>
+        <div id='profile'><br><br>
+            <textarea type='text' maxlength=50 placeholder="What's on your mind?" class='thought'></textarea><br>
+            <span class='circle'><i class='fas fa-user fa-4x'></i></span>
+            <h2><span id='username'>FV_User_128</span> <span onclick='editUsername()'><i class='fas fa-pencil'></i></span></h2>
+            <h3>5 Followers | 15 Following</h3><br><hr style='color:white;'><br>No posts yet
+        </div>
+        <div id='homepage'>
+        <article class='pfInfo'><span class='pfCircle'><i class='fas fa-user fa-lg'></i></span><div style='display:flex; flex-direction:column; margin-left:10px;'><span>☕︎︎AstroCarrot✦&nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>2hrs ago</span></div></article><br><div class='text'>Hi Guys! Just wanna tell y'all that i have reached 700 follower on Folloverse! Next target is to 1k followers! And additionally, I am giving away 5 PS5s. To participate, follow me and attend my next live stream!</div><div style='height:40px'></div>
+        <article class='pfInfo'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Elon_Musk_Royal_Society_crop.jpg/440px-Elon_Musk_Royal_Society_crop.jpg' class='pfCircle'><div style='display:flex; flex-direction:column; margin-left:10px;'><span>Elon Musk&nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>5hrs ago</span></div></article><br><div class='text'>This is the future guys! Just wait for 2027.<br><br><img src="https://i.ibb.co/S4nmjKqS/IMG-20250223-212601.jpg" alt="Flying Tesla" border="0" width='100%'></div><div style='height:40px'></div>
+        <article class='pfInfo'><a href='https://www.sololearn.com/profile/33411564/?ref=app'><span class='pfCircle'><i class='fas fa-user fa-lg' style='color:white'></i></span></a><div style='display:flex; flex-direction:column; margin-left:10px;'><span>Kaushik&nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>6hrs ago</span></div></article><br><div class='text'>Just for those who don't know, I am back to Sololearn and you can get me <a href='https://www.sololearn.com/profile/33411564/?ref=app'>here</a></div><div style='height:40px'></div>
+        <article class='pfInfo'><img src='https://i.ibb.co/wSMjfTN/1000071852.jpg' class='pfCircle'><div style='display:flex; flex-direction:column; margin-left:10px;'><span>Unknown Decoder&nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>6hrs ago</span></div></article><br><div class='text'>Guys do y'all know that I just released a Social Media Simulator, <a href='https://sololearn.com/compiler-playground/Wt73VtpnAXGR/?ref=app'>FOLLOVERSE</a>. Just named it cuz it is a uni-VERSE of FOLLO-wing and it sounds like "Followers"😅. Hope y'all will like it, I have spent so much time here✌️.</div><div style='height:40px'></div>
+        <article class='pfInfo'><a href='https://www.sololearn.com/profile/33411564/?ref=app'><span class='pfCircle'><i class='fas fa-user fa-lg' style='color:white'></i></span></a><div style='display:flex; flex-direction:column; margin-left:10px;'><span>Bra𝓋𝑒𝓇𝓎🪽 &nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>8hrs ago</span></div></article><br><div class='text'>Just typing for timepass😅</div><div style='height:40px'></div> 
+        <article class='pfInfo'><a href='https://www.sololearn.com/profile/33411564/?ref=app'><span class='pfCircle'><i class='fas fa-user fa-lg' style='color:white'></i></span></a><div style='display:flex; flex-direction:column; margin-left:10px;'><span>Anshu The Power Boy&nbsp&nbsp&nbsp<button class='followbtn' onclick='change(this)'>Follow</button></span><span style='color:gray;'>12hrs ago</span></div></article><br><div class='text'>Friends, I am a very noob person! I don't know anything! I am extremely Stupid! I am a personal friend of Unknown Decoder and study with him. I beg, I beg you all please follow me, Unknown Decoder has many folloverse and i have negligible😭😭</div><div style='height:40px'></div>
+        </div>
+        <div id='searchPage'>
+            <label><i class='fas fa-search' for='searchbar'></i></label>
+            <input type='text' id='searchbar' placeholder='Search for posts, accounts etc.' onkeydown='if (event.key==="Enter") showLoader()'>
+        </div>
+        
+        <nav class='bottomNav'>
+            <i class='fas fa-home fa-xl' onclick='getHome()'></i>
+            <i class='fas fa-search fa-xl' onclick='openSearch()'></i>
+            <i class='fas fa-pen fa-xl' onclick='alert("This feature is not available yet.")'></i>
+            <i class='fas fa-user fa-xl' onclick='openProfile()'></i>
+        </nav>
+        <script>
+let profile = document.getElementById('profile')
+let homepage = document.getElementById('homepage')
+let searchpage = document.getElementById('searchPage')
+function toggleMenu() {
+  let menuIcon = document.getElementById('menu-icon')
+  let menu = document.getElementById('menu')
+  
+  if (menuIcon.classList.contains('fa-bars')) {
+    menuIcon.classList.remove('fa-bars')
+    menuIcon.classList.add('fa-times')
+    menu.style.display = 'flex'
+  } else {
+    menuIcon.classList.remove('fa-times')
+    menuIcon.classList.add('fa-bars')
+    menu.style.display = 'none'
+  }
+}
+
+function editUsername() {
+    let username = document.getElementById('username')
+    newName = prompt("Enter your new username")
+    if (newName.length < 18) {
+        username.textContent = newName
+    } else {
+        alert("Username too long")
+    }
+}
+
+function getHome() {
+    profile.style.display = "none"
+    searchpage.style.display = "none"
+    homepage.style.display = "block"
+}
+
+function openProfile() {
+    profile.style.display = "block"
+    searchpage.style.display = "none"
+    homepage.style.display = "none"
+}
+
+function openSearch() {
+    profile.style.display = "none"
+    searchpage.style.display = "block"
+    homepage.style.display = "none"
+}
+
+function change(button) {
+    if (button.textContent === "Follow") {
+        button.textContent = "Unfollow"
+        button.style.backgroundColor = "#BBBBBB"
+    } else {
+        button.textContent = "Follow"
+        button.style.backgroundColor="#00CC00"
+    }
+}
+
+function showLoader() {
+    //this will be added soon
+}
+        </script>
+    </body>
+</html>
